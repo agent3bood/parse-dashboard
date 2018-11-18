@@ -44,6 +44,7 @@ let BrowserToolbar = ({
   enableDeleteAllRows,
   enableExportClass,
   enableSecurityDialog,
+  onSetTimeZone,
 }) => {
   let selectionLength = Object.keys(selection).length;
   let details = [];
@@ -153,6 +154,10 @@ let BrowserToolbar = ({
         userPointers={userPointers} /> : <noscript />}
       {enableSecurityDialog ? <div className={styles.toolbarSeparator} /> : <noscript/>}
       {menu}
+      <a className={styles.toolbarButton} onClick={onSetTimeZone}>
+        <Icon name='calendar-outline' width={14} height={14} />
+        <span>TimeZone</span>
+      </a>
     </Toolbar>
   );
 };
