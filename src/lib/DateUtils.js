@@ -128,6 +128,13 @@ export function dateStringUTC(date) {
   return full;
 }
 
+export function dateStringLocale(date, locale, timeZone){
+  if(!locale || !timeZone){
+    return dateStringUTC(date)
+  }
+  return(date.toLocaleString(locale, {timeZone: timeZone}))
+}
+
 export function monthDayStringUTC(date) {
   return `${shortMonth(date.getUTCMonth())} ${date.getUTCDate()}`;
 }
