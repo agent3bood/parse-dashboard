@@ -129,8 +129,11 @@ export function dateStringUTC(date) {
 }
 
 export function dateStringLocale(date, locale, timeZone){
-  if(!locale || !timeZone){
-    return dateStringUTC(date)
+  if(!locale){
+    locale = "en";
+  }
+  if(!timeZone){
+    return dateStringUTC(date);
   }
   return(date.toLocaleString(locale, {timeZone: timeZone}))
 }
